@@ -1,68 +1,170 @@
 var wms_layers = [];
 
-var format_ParkingLotsByCBDistrictGraduated_0 = new ol.format.GeoJSON();
-var features_ParkingLotsByCBDistrictGraduated_0 = format_ParkingLotsByCBDistrictGraduated_0.readFeatures(json_ParkingLotsByCBDistrictGraduated_0, 
+
+        var lyr_openstreetmap_0 = new ol.layer.Tile({
+            'title': 'open street map',
+            'type':'base',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            })
+        });
+var format_Propertieswithinahalfmileoftransit_1 = new ol.format.GeoJSON();
+var features_Propertieswithinahalfmileoftransit_1 = format_Propertieswithinahalfmileoftransit_1.readFeatures(json_Propertieswithinahalfmileoftransit_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_ParkingLotsByCBDistrictGraduated_0 = new ol.source.Vector({
+var jsonSource_Propertieswithinahalfmileoftransit_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_ParkingLotsByCBDistrictGraduated_0.addFeatures(features_ParkingLotsByCBDistrictGraduated_0);
-var lyr_ParkingLotsByCBDistrictGraduated_0 = new ol.layer.Vector({
+jsonSource_Propertieswithinahalfmileoftransit_1.addFeatures(features_Propertieswithinahalfmileoftransit_1);
+var lyr_Propertieswithinahalfmileoftransit_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_ParkingLotsByCBDistrictGraduated_0, 
-                style: style_ParkingLotsByCBDistrictGraduated_0,
+                source:jsonSource_Propertieswithinahalfmileoftransit_1, 
+                style: style_Propertieswithinahalfmileoftransit_1,
+                popuplayertitle: 'Properties within a half mile of transit',
+                interactive: true,
+                title: '<img src="styles/legend/Propertieswithinahalfmileoftransit_1.png" /> Properties within a half mile of transit'
+            });
+var format_nycd_labeled_2 = new ol.format.GeoJSON();
+var features_nycd_labeled_2 = format_nycd_labeled_2.readFeatures(json_nycd_labeled_2, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_nycd_labeled_2 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_nycd_labeled_2.addFeatures(features_nycd_labeled_2);
+var lyr_nycd_labeled_2 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_nycd_labeled_2, 
+                style: style_nycd_labeled_2,
+                popuplayertitle: 'nycd_labeled',
+                interactive: true,
+                title: '<img src="styles/legend/nycd_labeled_2.png" /> nycd_labeled'
+            });
+var format_railway_station_3 = new ol.format.GeoJSON();
+var features_railway_station_3 = format_railway_station_3.readFeatures(json_railway_station_3, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_railway_station_3 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_railway_station_3.addFeatures(features_railway_station_3);
+var lyr_railway_station_3 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_railway_station_3, 
+                style: style_railway_station_3,
+                popuplayertitle: 'railway_station',
+                interactive: true,
+                title: '<img src="styles/legend/railway_station_3.png" /> railway_station'
+            });
+var format_Buffered_4 = new ol.format.GeoJSON();
+var features_Buffered_4 = format_Buffered_4.readFeatures(json_Buffered_4, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Buffered_4 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Buffered_4.addFeatures(features_Buffered_4);
+var lyr_Buffered_4 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Buffered_4, 
+                style: style_Buffered_4,
+                popuplayertitle: 'Buffered',
+                interactive: true,
+                title: '<img src="styles/legend/Buffered_4.png" /> Buffered'
+            });
+var format_ParkingLotsByCBDistrictGraduated_5 = new ol.format.GeoJSON();
+var features_ParkingLotsByCBDistrictGraduated_5 = format_ParkingLotsByCBDistrictGraduated_5.readFeatures(json_ParkingLotsByCBDistrictGraduated_5, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_ParkingLotsByCBDistrictGraduated_5 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_ParkingLotsByCBDistrictGraduated_5.addFeatures(features_ParkingLotsByCBDistrictGraduated_5);
+var lyr_ParkingLotsByCBDistrictGraduated_5 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_ParkingLotsByCBDistrictGraduated_5, 
+                style: style_ParkingLotsByCBDistrictGraduated_5,
                 popuplayertitle: 'Parking Lots By CB District Graduated ',
                 interactive: true,
     title: 'Parking Lots By CB District Graduated <br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_0.png" /> 0 - 0<br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_1.png" /> 0 - 25000<br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_2.png" /> 25000 - 50000<br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_3.png" /> 50000 - 100000<br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_4.png" /> 100000 - 200000<br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_5.png" /> 200000 - 400000<br />\
-    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_0_6.png" /> 400000 - 800000<br />' });
-var format_MTASubwayLines_1 = new ol.format.GeoJSON();
-var features_MTASubwayLines_1 = format_MTASubwayLines_1.readFeatures(json_MTASubwayLines_1, 
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_0.png" /> 0 - 0<br />\
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_1.png" /> 0 - 25000<br />\
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_2.png" /> 25000 - 50000<br />\
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_3.png" /> 50000 - 100000<br />\
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_4.png" /> 100000 - 200000<br />\
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_5.png" /> 200000 - 400000<br />\
+    <img src="styles/legend/ParkingLotsByCBDistrictGraduated_5_6.png" /> 400000 - 800000<br />' });
+var format_MapPLUTO26v2MapPLUTO_26v2_clipped_6 = new ol.format.GeoJSON();
+var features_MapPLUTO26v2MapPLUTO_26v2_clipped_6 = format_MapPLUTO26v2MapPLUTO_26v2_clipped_6.readFeatures(json_MapPLUTO26v2MapPLUTO_26v2_clipped_6, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_MTASubwayLines_1 = new ol.source.Vector({
+var jsonSource_MapPLUTO26v2MapPLUTO_26v2_clipped_6 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_MTASubwayLines_1.addFeatures(features_MTASubwayLines_1);
-var lyr_MTASubwayLines_1 = new ol.layer.Vector({
+jsonSource_MapPLUTO26v2MapPLUTO_26v2_clipped_6.addFeatures(features_MapPLUTO26v2MapPLUTO_26v2_clipped_6);
+var lyr_MapPLUTO26v2MapPLUTO_26v2_clipped_6 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_MTASubwayLines_1, 
-                style: style_MTASubwayLines_1,
+                source:jsonSource_MapPLUTO26v2MapPLUTO_26v2_clipped_6, 
+                style: style_MapPLUTO26v2MapPLUTO_26v2_clipped_6,
+                popuplayertitle: 'MapPLUTO26v2 — MapPLUTO_26v2_clipped',
+                interactive: true,
+                title: '<img src="styles/legend/MapPLUTO26v2MapPLUTO_26v2_clipped_6.png" /> MapPLUTO26v2 — MapPLUTO_26v2_clipped'
+            });
+var format_MTASubwayLines_7 = new ol.format.GeoJSON();
+var features_MTASubwayLines_7 = format_MTASubwayLines_7.readFeatures(json_MTASubwayLines_7, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_MTASubwayLines_7 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_MTASubwayLines_7.addFeatures(features_MTASubwayLines_7);
+var lyr_MTASubwayLines_7 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_MTASubwayLines_7, 
+                style: style_MTASubwayLines_7,
                 popuplayertitle: 'MTA Subway Lines',
                 interactive: true,
-                title: '<img src="styles/legend/MTASubwayLines_1.png" /> MTA Subway Lines'
+                title: '<img src="styles/legend/MTASubwayLines_7.png" /> MTA Subway Lines'
             });
-var format_MileFromRailTransit_2 = new ol.format.GeoJSON();
-var features_MileFromRailTransit_2 = format_MileFromRailTransit_2.readFeatures(json_MileFromRailTransit_2, 
+var format_MileFromRailTransit_8 = new ol.format.GeoJSON();
+var features_MileFromRailTransit_8 = format_MileFromRailTransit_8.readFeatures(json_MileFromRailTransit_8, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_MileFromRailTransit_2 = new ol.source.Vector({
+var jsonSource_MileFromRailTransit_8 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_MileFromRailTransit_2.addFeatures(features_MileFromRailTransit_2);
-var lyr_MileFromRailTransit_2 = new ol.layer.Vector({
+jsonSource_MileFromRailTransit_8.addFeatures(features_MileFromRailTransit_8);
+var lyr_MileFromRailTransit_8 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_MileFromRailTransit_2, 
-                style: style_MileFromRailTransit_2,
+                source:jsonSource_MileFromRailTransit_8, 
+                style: style_MileFromRailTransit_8,
                 popuplayertitle: '½ Mile From Rail Transit',
                 interactive: true,
-                title: '<img src="styles/legend/MileFromRailTransit_2.png" /> ½ Mile From Rail Transit'
+                title: '<img src="styles/legend/MileFromRailTransit_8.png" /> ½ Mile From Rail Transit'
             });
 
-lyr_ParkingLotsByCBDistrictGraduated_0.setVisible(true);lyr_MTASubwayLines_1.setVisible(true);lyr_MileFromRailTransit_2.setVisible(true);
-var layersList = [lyr_ParkingLotsByCBDistrictGraduated_0,lyr_MTASubwayLines_1,lyr_MileFromRailTransit_2];
-lyr_ParkingLotsByCBDistrictGraduated_0.set('fieldAliases', {'fid': 'fid', 'boro_cd': 'boro_cd', 'shape_area': 'shape_area', 'shape_leng': 'shape_leng', 'Name': 'Name', 'count': 'count', 'sum': 'sum', });
-lyr_MTASubwayLines_1.set('fieldAliases', {':id': ':id', ':version': ':version', ':created_at': ':created_at', ':updated_at': ':updated_at', 'objectid': 'objectid', 'service_name': 'service_name', 'service': 'service', 'shape_stlength': 'shape_stlength', });
-lyr_MileFromRailTransit_2.set('fieldAliases', {'Complex ID': 'Complex ID', 'Is Complex': 'Is Complex', 'Number Of Stations In Complex': 'Number Of Stations In Complex', 'Stop Name': 'Stop Name', 'Display Name': 'Display Name', 'Constituent Station Names': 'Constituent Station Names', 'Station IDs': 'Station IDs', 'GTFS Stop IDs': 'GTFS Stop IDs', 'Borough': 'Borough', 'CBD': 'CBD', 'Daytime Routes': 'Daytime Routes', 'Structure Type': 'Structure Type', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'ADA': 'ADA', 'ADA Notes': 'ADA Notes', });
-lyr_ParkingLotsByCBDistrictGraduated_0.set('fieldImages', {'fid': '', 'boro_cd': 'TextEdit', 'shape_area': 'TextEdit', 'shape_leng': 'TextEdit', 'Name': 'TextEdit', 'count': 'Range', 'sum': 'TextEdit', });
-lyr_MTASubwayLines_1.set('fieldImages', {':id': 'TextEdit', ':version': 'TextEdit', ':created_at': 'DateTime', ':updated_at': 'DateTime', 'objectid': 'TextEdit', 'service_name': 'TextEdit', 'service': 'TextEdit', 'shape_stlength': 'TextEdit', });
-lyr_MileFromRailTransit_2.set('fieldImages', {'Complex ID': 'Range', 'Is Complex': 'CheckBox', 'Number Of Stations In Complex': 'Range', 'Stop Name': 'TextEdit', 'Display Name': 'TextEdit', 'Constituent Station Names': 'TextEdit', 'Station IDs': 'TextEdit', 'GTFS Stop IDs': 'TextEdit', 'Borough': 'TextEdit', 'CBD': 'CheckBox', 'Daytime Routes': 'TextEdit', 'Structure Type': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'ADA': 'Range', 'ADA Notes': 'TextEdit', });
-lyr_ParkingLotsByCBDistrictGraduated_0.set('fieldLabels', {'fid': 'no label', 'boro_cd': 'no label', 'shape_area': 'no label', 'shape_leng': 'no label', 'Name': 'no label', 'count': 'no label', 'sum': 'no label', });
-lyr_MTASubwayLines_1.set('fieldLabels', {':id': 'no label', ':version': 'no label', ':created_at': 'no label', ':updated_at': 'no label', 'objectid': 'no label', 'service_name': 'no label', 'service': 'no label', 'shape_stlength': 'no label', });
-lyr_MileFromRailTransit_2.set('fieldLabels', {'Complex ID': 'no label', 'Is Complex': 'no label', 'Number Of Stations In Complex': 'no label', 'Stop Name': 'no label', 'Display Name': 'no label', 'Constituent Station Names': 'no label', 'Station IDs': 'no label', 'GTFS Stop IDs': 'no label', 'Borough': 'no label', 'CBD': 'no label', 'Daytime Routes': 'no label', 'Structure Type': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'ADA': 'no label', 'ADA Notes': 'no label', });
-lyr_MileFromRailTransit_2.on('precompose', function(evt) {
+lyr_openstreetmap_0.setVisible(true);lyr_Propertieswithinahalfmileoftransit_1.setVisible(true);lyr_nycd_labeled_2.setVisible(true);lyr_railway_station_3.setVisible(true);lyr_Buffered_4.setVisible(true);lyr_ParkingLotsByCBDistrictGraduated_5.setVisible(true);lyr_MapPLUTO26v2MapPLUTO_26v2_clipped_6.setVisible(true);lyr_MTASubwayLines_7.setVisible(true);lyr_MileFromRailTransit_8.setVisible(true);
+var layersList = [lyr_openstreetmap_0,lyr_Propertieswithinahalfmileoftransit_1,lyr_nycd_labeled_2,lyr_railway_station_3,lyr_Buffered_4,lyr_ParkingLotsByCBDistrictGraduated_5,lyr_MapPLUTO26v2MapPLUTO_26v2_clipped_6,lyr_MTASubwayLines_7,lyr_MileFromRailTransit_8];
+lyr_Propertieswithinahalfmileoftransit_1.set('fieldAliases', {'fid': 'fid', 'OBJECTID': 'OBJECTID', 'Borough': 'Borough', 'Block': 'Block', 'Lot': 'Lot', 'CD': 'CD', 'BCT2020': 'BCT2020', 'BCTCB2020': 'BCTCB2020', 'CT2010': 'CT2010', 'CB2010': 'CB2010', 'SchoolDist': 'SchoolDist', 'Council': 'Council', 'ZipCode': 'ZipCode', 'FireComp': 'FireComp', 'PolicePrct': 'PolicePrct', 'HealthCenterDistrict': 'HealthCenterDistrict', 'HealthArea': 'HealthArea', 'Sanitboro': 'Sanitboro', 'SanitDistrict': 'SanitDistrict', 'SanitSub': 'SanitSub', 'Address': 'Address', 'ZoneDist1': 'ZoneDist1', 'ZoneDist2': 'ZoneDist2', 'ZoneDist3': 'ZoneDist3', 'ZoneDist4': 'ZoneDist4', 'Overlay1': 'Overlay1', 'Overlay2': 'Overlay2', 'SPDist1': 'SPDist1', 'SPDist2': 'SPDist2', 'SPDist3': 'SPDist3', 'LtdHeight': 'LtdHeight', 'SplitZone': 'SplitZone', 'BldgClass': 'BldgClass', 'LandUse': 'LandUse', 'Easements': 'Easements', 'OwnerType': 'OwnerType', 'OwnerName': 'OwnerName', 'LotArea': 'LotArea', 'BldgArea': 'BldgArea', 'ComArea': 'ComArea', 'ResArea': 'ResArea', 'OfficeArea': 'OfficeArea', 'RetailArea': 'RetailArea', 'GarageArea': 'GarageArea', 'StrgeArea': 'StrgeArea', 'FactryArea': 'FactryArea', 'OtherArea': 'OtherArea', 'AreaSource': 'AreaSource', 'NumBldgs': 'NumBldgs', 'NumFloors': 'NumFloors', 'UnitsRes': 'UnitsRes', 'UnitsTotal': 'UnitsTotal', 'LotFront': 'LotFront', 'LotDepth': 'LotDepth', 'BldgFront': 'BldgFront', 'BldgDepth': 'BldgDepth', 'Ext': 'Ext', 'ProxCode': 'ProxCode', 'IrrLotCode': 'IrrLotCode', 'LotType': 'LotType', 'BsmtCode': 'BsmtCode', 'AssessLand': 'AssessLand', 'AssessTot': 'AssessTot', 'ExemptTot': 'ExemptTot', 'YearBuilt': 'YearBuilt', 'YearAlter1': 'YearAlter1', 'YearAlter2': 'YearAlter2', 'HistDist': 'HistDist', 'Landmark': 'Landmark', 'BuiltFAR': 'BuiltFAR', 'ResidFAR': 'ResidFAR', 'CommFAR': 'CommFAR', 'FacilFAR': 'FacilFAR', 'BoroCode': 'BoroCode', 'BBL': 'BBL', 'CondoNo': 'CondoNo', 'Tract2010': 'Tract2010', 'XCoord': 'XCoord', 'YCoord': 'YCoord', 'ZoneMap': 'ZoneMap', 'ZMCode': 'ZMCode', 'Sanborn': 'Sanborn', 'TaxMap': 'TaxMap', 'EDesigNum': 'EDesigNum', 'APPBBL': 'APPBBL', 'APPDate': 'APPDate', 'PLUTOMapID': 'PLUTOMapID', 'FIRM07_FLAG': 'FIRM07_FLAG', 'PFIRM15_FLAG': 'PFIRM15_FLAG', 'Version': 'Version', 'DCPEdited': 'DCPEdited', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'Notes': 'Notes', 'MIHOption1': 'MIHOption1', 'MIHOption2': 'MIHOption2', 'MIHOption3': 'MIHOption3', 'MIHOption4': 'MIHOption4', 'TrnstZone': 'TrnstZone', 'AffResFAR': 'AffResFAR', 'ManuFAR': 'ManuFAR', 'Shape_Leng': 'Shape_Leng', 'Shape_Length': 'Shape_Length', 'Shape_Area': 'Shape_Area', 'Res_Capacity': 'Res_Capacity', });
+lyr_nycd_labeled_2.set('fieldAliases', {'boro_cd': 'boro_cd', 'shape_area': 'shape_area', 'shape_leng': 'shape_leng', 'Name': 'Name', });
+lyr_railway_station_3.set('fieldAliases', {'full_id': 'full_id', 'osm_id': 'osm_id', 'osm_type': 'osm_type', 'railway': 'railway', 'survey:date': 'survey:date', 'old_name:ru': 'old_name:ru', 'toilets:access': 'toilets:access', 'toilets': 'toilets', 'conveying': 'conveying', 'location': 'location', 'name:lt': 'name:lt', 'ref:via_rail': 'ref:via_rail', 'ref:amtrak': 'ref:amtrak', 'railway:position': 'railway:position', 'official_name': 'official_name', 'name:zh-Hant': 'name:zh-Hant', 'name:ja': 'name:ja', 'name:he': 'name:he', 'iata': 'iata', 'name:pronunciation': 'name:pronunciation', 'payment:OMNY': 'payment:OMNY', 'air_conditioning': 'air_conditioning', 'addr:housenumber': 'addr:housenumber', 'description': 'description', 'check_date': 'check_date', 'payment:omny': 'payment:omny', 'owner:wikidata': 'owner:wikidata', 'owner': 'owner', 'departures_board:speech_output': 'departures_board:speech_output', 'departures_board': 'departures_board', 'name:zh-Hans': 'name:zh-Hans', 'name:zh': 'name:zh', 'toilets:wheelchair': 'toilets:wheelchair', 'not:network:wikidata': 'not:network:wikidata', 'operator:short': 'operator:short', 'network:short': 'network:short', 'light_rail': 'light_rail', 'asset_ref': 'asset_ref', 'image': 'image', 'alt_name': 'alt_name', 'wikimedia_commons': 'wikimedia_commons', 'start_date': 'start_date', 'name:pl': 'name:pl', 'name:nl': 'name:nl', 'name:es': 'name:es', 'gtfs_stop_code': 'gtfs_stop_code', 'addr:postcode': 'addr:postcode', 'addr:street': 'addr:street', 'addr:state': 'addr:state', 'addr:city': 'addr:city', 'website': 'website', 'wheelchair:description': 'wheelchair:description', 'wheelchair': 'wheelchair', 'subway': 'subway', 'station': 'station', 'short_name': 'short_name', 'opening_hours': 'opening_hours', 'name:ru': 'name:ru', 'name:ko': 'name:ko', 'name:en': 'name:en', 'level': 'level', 'internet_access:fee': 'internet_access:fee', 'internet_access': 'internet_access', 'wikipedia': 'wikipedia', 'wikidata': 'wikidata', 'train': 'train', 'railway:ref': 'railway:ref', 'public_transport': 'public_transport', 'platforms': 'platforms', 'operator:wikidata': 'operator:wikidata', 'operator': 'operator', 'old_name': 'old_name', 'network:wikidata': 'network:wikidata', 'network': 'network', 'name': 'name', });
+lyr_Buffered_4.set('fieldAliases', {'Complex ID': 'Complex ID', 'Is Complex': 'Is Complex', 'Number Of Stations In Complex': 'Number Of Stations In Complex', 'Stop Name': 'Stop Name', 'Display Name': 'Display Name', 'Constituent Station Names': 'Constituent Station Names', 'Station IDs': 'Station IDs', 'GTFS Stop IDs': 'GTFS Stop IDs', 'Borough': 'Borough', 'CBD': 'CBD', 'Daytime Routes': 'Daytime Routes', 'Structure Type': 'Structure Type', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'ADA': 'ADA', 'ADA Notes': 'ADA Notes', });
+lyr_ParkingLotsByCBDistrictGraduated_5.set('fieldAliases', {'fid': 'fid', 'boro_cd': 'boro_cd', 'shape_area': 'shape_area', 'shape_leng': 'shape_leng', 'Name': 'Name', 'count': 'count', 'sum': 'sum', });
+lyr_MapPLUTO26v2MapPLUTO_26v2_clipped_6.set('fieldAliases', {'OBJECTID': 'OBJECTID', 'Borough': 'Borough', 'Block': 'Block', 'Lot': 'Lot', 'CD': 'CD', 'BCT2020': 'BCT2020', 'BCTCB2020': 'BCTCB2020', 'CT2010': 'CT2010', 'CB2010': 'CB2010', 'SchoolDist': 'SchoolDist', 'Council': 'Council', 'ZipCode': 'ZipCode', 'FireComp': 'FireComp', 'PolicePrct': 'PolicePrct', 'HealthCenterDistrict': 'HealthCenterDistrict', 'HealthArea': 'HealthArea', 'Sanitboro': 'Sanitboro', 'SanitDistrict': 'SanitDistrict', 'SanitSub': 'SanitSub', 'Address': 'Address', 'ZoneDist1': 'ZoneDist1', 'ZoneDist2': 'ZoneDist2', 'ZoneDist3': 'ZoneDist3', 'ZoneDist4': 'ZoneDist4', 'Overlay1': 'Overlay1', 'Overlay2': 'Overlay2', 'SPDist1': 'SPDist1', 'SPDist2': 'SPDist2', 'SPDist3': 'SPDist3', 'LtdHeight': 'LtdHeight', 'SplitZone': 'SplitZone', 'BldgClass': 'BldgClass', 'LandUse': 'LandUse', 'Easements': 'Easements', 'OwnerType': 'OwnerType', 'OwnerName': 'OwnerName', 'LotArea': 'LotArea', 'BldgArea': 'BldgArea', 'ComArea': 'ComArea', 'ResArea': 'ResArea', 'OfficeArea': 'OfficeArea', 'RetailArea': 'RetailArea', 'GarageArea': 'GarageArea', 'StrgeArea': 'StrgeArea', 'FactryArea': 'FactryArea', 'OtherArea': 'OtherArea', 'AreaSource': 'AreaSource', 'NumBldgs': 'NumBldgs', 'NumFloors': 'NumFloors', 'UnitsRes': 'UnitsRes', 'UnitsTotal': 'UnitsTotal', 'LotFront': 'LotFront', 'LotDepth': 'LotDepth', 'BldgFront': 'BldgFront', 'BldgDepth': 'BldgDepth', 'Ext': 'Ext', 'ProxCode': 'ProxCode', 'IrrLotCode': 'IrrLotCode', 'LotType': 'LotType', 'BsmtCode': 'BsmtCode', 'AssessLand': 'AssessLand', 'AssessTot': 'AssessTot', 'ExemptTot': 'ExemptTot', 'YearBuilt': 'YearBuilt', 'YearAlter1': 'YearAlter1', 'YearAlter2': 'YearAlter2', 'HistDist': 'HistDist', 'Landmark': 'Landmark', 'BuiltFAR': 'BuiltFAR', 'ResidFAR': 'ResidFAR', 'CommFAR': 'CommFAR', 'FacilFAR': 'FacilFAR', 'BoroCode': 'BoroCode', 'BBL': 'BBL', 'CondoNo': 'CondoNo', 'Tract2010': 'Tract2010', 'XCoord': 'XCoord', 'YCoord': 'YCoord', 'ZoneMap': 'ZoneMap', 'ZMCode': 'ZMCode', 'Sanborn': 'Sanborn', 'TaxMap': 'TaxMap', 'EDesigNum': 'EDesigNum', 'APPBBL': 'APPBBL', 'APPDate': 'APPDate', 'PLUTOMapID': 'PLUTOMapID', 'FIRM07_FLAG': 'FIRM07_FLAG', 'PFIRM15_FLAG': 'PFIRM15_FLAG', 'Version': 'Version', 'DCPEdited': 'DCPEdited', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'Notes': 'Notes', 'MIHOption1': 'MIHOption1', 'MIHOption2': 'MIHOption2', 'MIHOption3': 'MIHOption3', 'MIHOption4': 'MIHOption4', 'TrnstZone': 'TrnstZone', 'AffResFAR': 'AffResFAR', 'ManuFAR': 'ManuFAR', 'Shape_Leng': 'Shape_Leng', 'Shape_Length': 'Shape_Length', 'Shape_Area': 'Shape_Area', 'Res_Capacity': 'Res_Capacity', });
+lyr_MTASubwayLines_7.set('fieldAliases', {':id': ':id', ':version': ':version', ':created_at': ':created_at', ':updated_at': ':updated_at', 'objectid': 'objectid', 'service_name': 'service_name', 'service': 'service', 'shape_stlength': 'shape_stlength', });
+lyr_MileFromRailTransit_8.set('fieldAliases', {'Complex ID': 'Complex ID', 'Is Complex': 'Is Complex', 'Number Of Stations In Complex': 'Number Of Stations In Complex', 'Stop Name': 'Stop Name', 'Display Name': 'Display Name', 'Constituent Station Names': 'Constituent Station Names', 'Station IDs': 'Station IDs', 'GTFS Stop IDs': 'GTFS Stop IDs', 'Borough': 'Borough', 'CBD': 'CBD', 'Daytime Routes': 'Daytime Routes', 'Structure Type': 'Structure Type', 'Latitude': 'Latitude', 'Longitude': 'Longitude', 'ADA': 'ADA', 'ADA Notes': 'ADA Notes', });
+lyr_Propertieswithinahalfmileoftransit_1.set('fieldImages', {'fid': '', 'OBJECTID': '', 'Borough': '', 'Block': '', 'Lot': '', 'CD': '', 'BCT2020': '', 'BCTCB2020': '', 'CT2010': '', 'CB2010': '', 'SchoolDist': '', 'Council': '', 'ZipCode': '', 'FireComp': '', 'PolicePrct': '', 'HealthCenterDistrict': '', 'HealthArea': '', 'Sanitboro': '', 'SanitDistrict': '', 'SanitSub': '', 'Address': '', 'ZoneDist1': '', 'ZoneDist2': '', 'ZoneDist3': '', 'ZoneDist4': '', 'Overlay1': '', 'Overlay2': '', 'SPDist1': '', 'SPDist2': '', 'SPDist3': '', 'LtdHeight': '', 'SplitZone': '', 'BldgClass': '', 'LandUse': '', 'Easements': '', 'OwnerType': '', 'OwnerName': '', 'LotArea': '', 'BldgArea': '', 'ComArea': '', 'ResArea': '', 'OfficeArea': '', 'RetailArea': '', 'GarageArea': '', 'StrgeArea': '', 'FactryArea': '', 'OtherArea': '', 'AreaSource': '', 'NumBldgs': '', 'NumFloors': '', 'UnitsRes': '', 'UnitsTotal': '', 'LotFront': '', 'LotDepth': '', 'BldgFront': '', 'BldgDepth': '', 'Ext': '', 'ProxCode': '', 'IrrLotCode': '', 'LotType': '', 'BsmtCode': '', 'AssessLand': '', 'AssessTot': '', 'ExemptTot': '', 'YearBuilt': '', 'YearAlter1': '', 'YearAlter2': '', 'HistDist': '', 'Landmark': '', 'BuiltFAR': '', 'ResidFAR': '', 'CommFAR': '', 'FacilFAR': '', 'BoroCode': '', 'BBL': '', 'CondoNo': '', 'Tract2010': '', 'XCoord': '', 'YCoord': '', 'ZoneMap': '', 'ZMCode': '', 'Sanborn': '', 'TaxMap': '', 'EDesigNum': '', 'APPBBL': '', 'APPDate': '', 'PLUTOMapID': '', 'FIRM07_FLAG': '', 'PFIRM15_FLAG': '', 'Version': '', 'DCPEdited': '', 'Latitude': '', 'Longitude': '', 'Notes': '', 'MIHOption1': '', 'MIHOption2': '', 'MIHOption3': '', 'MIHOption4': '', 'TrnstZone': '', 'AffResFAR': '', 'ManuFAR': '', 'Shape_Leng': '', 'Shape_Length': '', 'Shape_Area': '', 'Res_Capacity': '', });
+lyr_nycd_labeled_2.set('fieldImages', {'boro_cd': 'TextEdit', 'shape_area': 'TextEdit', 'shape_leng': 'TextEdit', 'Name': 'TextEdit', });
+lyr_railway_station_3.set('fieldImages', {'full_id': '', 'osm_id': '', 'osm_type': '', 'railway': '', 'survey:date': '', 'old_name:ru': '', 'toilets:access': '', 'toilets': '', 'conveying': '', 'location': '', 'name:lt': '', 'ref:via_rail': '', 'ref:amtrak': '', 'railway:position': '', 'official_name': '', 'name:zh-Hant': '', 'name:ja': '', 'name:he': '', 'iata': '', 'name:pronunciation': '', 'payment:OMNY': '', 'air_conditioning': '', 'addr:housenumber': '', 'description': '', 'check_date': '', 'payment:omny': '', 'owner:wikidata': '', 'owner': '', 'departures_board:speech_output': '', 'departures_board': '', 'name:zh-Hans': '', 'name:zh': '', 'toilets:wheelchair': '', 'not:network:wikidata': '', 'operator:short': '', 'network:short': '', 'light_rail': '', 'asset_ref': '', 'image': '', 'alt_name': '', 'wikimedia_commons': '', 'start_date': '', 'name:pl': '', 'name:nl': '', 'name:es': '', 'gtfs_stop_code': '', 'addr:postcode': '', 'addr:street': '', 'addr:state': '', 'addr:city': '', 'website': '', 'wheelchair:description': '', 'wheelchair': '', 'subway': '', 'station': '', 'short_name': '', 'opening_hours': '', 'name:ru': '', 'name:ko': '', 'name:en': '', 'level': '', 'internet_access:fee': '', 'internet_access': '', 'wikipedia': '', 'wikidata': '', 'train': '', 'railway:ref': '', 'public_transport': '', 'platforms': '', 'operator:wikidata': '', 'operator': '', 'old_name': '', 'network:wikidata': '', 'network': '', 'name': '', });
+lyr_Buffered_4.set('fieldImages', {'Complex ID': 'Range', 'Is Complex': 'CheckBox', 'Number Of Stations In Complex': 'Range', 'Stop Name': 'TextEdit', 'Display Name': 'TextEdit', 'Constituent Station Names': 'TextEdit', 'Station IDs': 'TextEdit', 'GTFS Stop IDs': 'TextEdit', 'Borough': 'TextEdit', 'CBD': 'CheckBox', 'Daytime Routes': 'TextEdit', 'Structure Type': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'ADA': 'Range', 'ADA Notes': 'TextEdit', });
+lyr_ParkingLotsByCBDistrictGraduated_5.set('fieldImages', {'fid': '', 'boro_cd': 'TextEdit', 'shape_area': 'TextEdit', 'shape_leng': 'TextEdit', 'Name': 'TextEdit', 'count': 'Range', 'sum': 'TextEdit', });
+lyr_MapPLUTO26v2MapPLUTO_26v2_clipped_6.set('fieldImages', {'OBJECTID': 'TextEdit', 'Borough': 'TextEdit', 'Block': 'Range', 'Lot': 'Range', 'CD': 'Range', 'BCT2020': 'TextEdit', 'BCTCB2020': 'TextEdit', 'CT2010': 'TextEdit', 'CB2010': 'TextEdit', 'SchoolDist': 'TextEdit', 'Council': 'Range', 'ZipCode': 'Range', 'FireComp': 'TextEdit', 'PolicePrct': 'Range', 'HealthCenterDistrict': 'Range', 'HealthArea': 'Range', 'Sanitboro': 'TextEdit', 'SanitDistrict': 'TextEdit', 'SanitSub': 'TextEdit', 'Address': 'TextEdit', 'ZoneDist1': 'TextEdit', 'ZoneDist2': 'TextEdit', 'ZoneDist3': 'TextEdit', 'ZoneDist4': 'TextEdit', 'Overlay1': 'TextEdit', 'Overlay2': 'TextEdit', 'SPDist1': 'TextEdit', 'SPDist2': 'TextEdit', 'SPDist3': 'TextEdit', 'LtdHeight': 'TextEdit', 'SplitZone': 'TextEdit', 'BldgClass': 'TextEdit', 'LandUse': 'TextEdit', 'Easements': 'Range', 'OwnerType': 'TextEdit', 'OwnerName': 'TextEdit', 'LotArea': 'Range', 'BldgArea': 'Range', 'ComArea': 'Range', 'ResArea': 'Range', 'OfficeArea': 'Range', 'RetailArea': 'Range', 'GarageArea': 'Range', 'StrgeArea': 'Range', 'FactryArea': 'Range', 'OtherArea': 'Range', 'AreaSource': 'TextEdit', 'NumBldgs': 'Range', 'NumFloors': 'TextEdit', 'UnitsRes': 'Range', 'UnitsTotal': 'Range', 'LotFront': 'TextEdit', 'LotDepth': 'TextEdit', 'BldgFront': 'TextEdit', 'BldgDepth': 'TextEdit', 'Ext': 'TextEdit', 'ProxCode': 'TextEdit', 'IrrLotCode': 'TextEdit', 'LotType': 'TextEdit', 'BsmtCode': 'TextEdit', 'AssessLand': 'TextEdit', 'AssessTot': 'TextEdit', 'ExemptTot': 'TextEdit', 'YearBuilt': 'Range', 'YearAlter1': 'Range', 'YearAlter2': 'Range', 'HistDist': 'TextEdit', 'Landmark': 'TextEdit', 'BuiltFAR': 'TextEdit', 'ResidFAR': 'TextEdit', 'CommFAR': 'TextEdit', 'FacilFAR': 'TextEdit', 'BoroCode': 'Range', 'BBL': 'TextEdit', 'CondoNo': 'Range', 'Tract2010': 'TextEdit', 'XCoord': 'Range', 'YCoord': 'Range', 'ZoneMap': 'TextEdit', 'ZMCode': 'TextEdit', 'Sanborn': 'TextEdit', 'TaxMap': 'TextEdit', 'EDesigNum': 'TextEdit', 'APPBBL': 'TextEdit', 'APPDate': 'TextEdit', 'PLUTOMapID': 'TextEdit', 'FIRM07_FLAG': 'TextEdit', 'PFIRM15_FLAG': 'TextEdit', 'Version': 'TextEdit', 'DCPEdited': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'Notes': 'TextEdit', 'MIHOption1': 'TextEdit', 'MIHOption2': 'TextEdit', 'MIHOption3': 'TextEdit', 'MIHOption4': 'TextEdit', 'TrnstZone': 'TextEdit', 'AffResFAR': 'TextEdit', 'ManuFAR': 'TextEdit', 'Shape_Leng': 'TextEdit', 'Shape_Length': 'TextEdit', 'Shape_Area': 'TextEdit', 'Res_Capacity': 'TextEdit', });
+lyr_MTASubwayLines_7.set('fieldImages', {':id': 'TextEdit', ':version': 'TextEdit', ':created_at': 'DateTime', ':updated_at': 'DateTime', 'objectid': 'TextEdit', 'service_name': 'TextEdit', 'service': 'TextEdit', 'shape_stlength': 'TextEdit', });
+lyr_MileFromRailTransit_8.set('fieldImages', {'Complex ID': 'Range', 'Is Complex': 'CheckBox', 'Number Of Stations In Complex': 'Range', 'Stop Name': 'TextEdit', 'Display Name': 'TextEdit', 'Constituent Station Names': 'TextEdit', 'Station IDs': 'TextEdit', 'GTFS Stop IDs': 'TextEdit', 'Borough': 'TextEdit', 'CBD': 'CheckBox', 'Daytime Routes': 'TextEdit', 'Structure Type': 'TextEdit', 'Latitude': 'TextEdit', 'Longitude': 'TextEdit', 'ADA': 'Range', 'ADA Notes': 'TextEdit', });
+lyr_Propertieswithinahalfmileoftransit_1.set('fieldLabels', {'fid': 'no label', 'OBJECTID': 'no label', 'Borough': 'no label', 'Block': 'no label', 'Lot': 'no label', 'CD': 'no label', 'BCT2020': 'no label', 'BCTCB2020': 'no label', 'CT2010': 'no label', 'CB2010': 'no label', 'SchoolDist': 'no label', 'Council': 'no label', 'ZipCode': 'no label', 'FireComp': 'no label', 'PolicePrct': 'no label', 'HealthCenterDistrict': 'no label', 'HealthArea': 'no label', 'Sanitboro': 'no label', 'SanitDistrict': 'no label', 'SanitSub': 'no label', 'Address': 'no label', 'ZoneDist1': 'no label', 'ZoneDist2': 'no label', 'ZoneDist3': 'no label', 'ZoneDist4': 'no label', 'Overlay1': 'no label', 'Overlay2': 'no label', 'SPDist1': 'no label', 'SPDist2': 'no label', 'SPDist3': 'no label', 'LtdHeight': 'no label', 'SplitZone': 'no label', 'BldgClass': 'no label', 'LandUse': 'no label', 'Easements': 'no label', 'OwnerType': 'no label', 'OwnerName': 'no label', 'LotArea': 'no label', 'BldgArea': 'no label', 'ComArea': 'no label', 'ResArea': 'no label', 'OfficeArea': 'no label', 'RetailArea': 'no label', 'GarageArea': 'no label', 'StrgeArea': 'no label', 'FactryArea': 'no label', 'OtherArea': 'no label', 'AreaSource': 'no label', 'NumBldgs': 'no label', 'NumFloors': 'no label', 'UnitsRes': 'no label', 'UnitsTotal': 'no label', 'LotFront': 'no label', 'LotDepth': 'no label', 'BldgFront': 'no label', 'BldgDepth': 'no label', 'Ext': 'no label', 'ProxCode': 'no label', 'IrrLotCode': 'no label', 'LotType': 'no label', 'BsmtCode': 'no label', 'AssessLand': 'no label', 'AssessTot': 'no label', 'ExemptTot': 'no label', 'YearBuilt': 'no label', 'YearAlter1': 'no label', 'YearAlter2': 'no label', 'HistDist': 'no label', 'Landmark': 'no label', 'BuiltFAR': 'no label', 'ResidFAR': 'no label', 'CommFAR': 'no label', 'FacilFAR': 'no label', 'BoroCode': 'no label', 'BBL': 'no label', 'CondoNo': 'no label', 'Tract2010': 'no label', 'XCoord': 'no label', 'YCoord': 'no label', 'ZoneMap': 'no label', 'ZMCode': 'no label', 'Sanborn': 'no label', 'TaxMap': 'no label', 'EDesigNum': 'no label', 'APPBBL': 'no label', 'APPDate': 'no label', 'PLUTOMapID': 'no label', 'FIRM07_FLAG': 'no label', 'PFIRM15_FLAG': 'no label', 'Version': 'no label', 'DCPEdited': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'Notes': 'no label', 'MIHOption1': 'no label', 'MIHOption2': 'no label', 'MIHOption3': 'no label', 'MIHOption4': 'no label', 'TrnstZone': 'no label', 'AffResFAR': 'no label', 'ManuFAR': 'no label', 'Shape_Leng': 'no label', 'Shape_Length': 'no label', 'Shape_Area': 'no label', 'Res_Capacity': 'no label', });
+lyr_nycd_labeled_2.set('fieldLabels', {'boro_cd': 'no label', 'shape_area': 'no label', 'shape_leng': 'no label', 'Name': 'no label', });
+lyr_railway_station_3.set('fieldLabels', {'full_id': 'no label', 'osm_id': 'no label', 'osm_type': 'no label', 'railway': 'no label', 'survey:date': 'no label', 'old_name:ru': 'no label', 'toilets:access': 'no label', 'toilets': 'no label', 'conveying': 'no label', 'location': 'no label', 'name:lt': 'no label', 'ref:via_rail': 'no label', 'ref:amtrak': 'no label', 'railway:position': 'no label', 'official_name': 'no label', 'name:zh-Hant': 'no label', 'name:ja': 'no label', 'name:he': 'no label', 'iata': 'no label', 'name:pronunciation': 'no label', 'payment:OMNY': 'no label', 'air_conditioning': 'no label', 'addr:housenumber': 'no label', 'description': 'no label', 'check_date': 'no label', 'payment:omny': 'no label', 'owner:wikidata': 'no label', 'owner': 'no label', 'departures_board:speech_output': 'no label', 'departures_board': 'no label', 'name:zh-Hans': 'no label', 'name:zh': 'no label', 'toilets:wheelchair': 'no label', 'not:network:wikidata': 'no label', 'operator:short': 'no label', 'network:short': 'no label', 'light_rail': 'no label', 'asset_ref': 'no label', 'image': 'no label', 'alt_name': 'no label', 'wikimedia_commons': 'no label', 'start_date': 'no label', 'name:pl': 'no label', 'name:nl': 'no label', 'name:es': 'no label', 'gtfs_stop_code': 'no label', 'addr:postcode': 'no label', 'addr:street': 'no label', 'addr:state': 'no label', 'addr:city': 'no label', 'website': 'no label', 'wheelchair:description': 'no label', 'wheelchair': 'no label', 'subway': 'no label', 'station': 'no label', 'short_name': 'no label', 'opening_hours': 'no label', 'name:ru': 'no label', 'name:ko': 'no label', 'name:en': 'no label', 'level': 'no label', 'internet_access:fee': 'no label', 'internet_access': 'no label', 'wikipedia': 'no label', 'wikidata': 'no label', 'train': 'no label', 'railway:ref': 'no label', 'public_transport': 'no label', 'platforms': 'no label', 'operator:wikidata': 'no label', 'operator': 'no label', 'old_name': 'no label', 'network:wikidata': 'no label', 'network': 'no label', 'name': 'no label', });
+lyr_Buffered_4.set('fieldLabels', {'Complex ID': 'no label', 'Is Complex': 'no label', 'Number Of Stations In Complex': 'no label', 'Stop Name': 'no label', 'Display Name': 'no label', 'Constituent Station Names': 'no label', 'Station IDs': 'no label', 'GTFS Stop IDs': 'no label', 'Borough': 'no label', 'CBD': 'no label', 'Daytime Routes': 'no label', 'Structure Type': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'ADA': 'no label', 'ADA Notes': 'no label', });
+lyr_ParkingLotsByCBDistrictGraduated_5.set('fieldLabels', {'fid': 'no label', 'boro_cd': 'no label', 'shape_area': 'no label', 'shape_leng': 'no label', 'Name': 'no label', 'count': 'no label', 'sum': 'no label', });
+lyr_MapPLUTO26v2MapPLUTO_26v2_clipped_6.set('fieldLabels', {'OBJECTID': 'no label', 'Borough': 'no label', 'Block': 'no label', 'Lot': 'no label', 'CD': 'no label', 'BCT2020': 'no label', 'BCTCB2020': 'no label', 'CT2010': 'no label', 'CB2010': 'no label', 'SchoolDist': 'no label', 'Council': 'no label', 'ZipCode': 'no label', 'FireComp': 'no label', 'PolicePrct': 'no label', 'HealthCenterDistrict': 'no label', 'HealthArea': 'no label', 'Sanitboro': 'no label', 'SanitDistrict': 'no label', 'SanitSub': 'no label', 'Address': 'no label', 'ZoneDist1': 'no label', 'ZoneDist2': 'no label', 'ZoneDist3': 'no label', 'ZoneDist4': 'no label', 'Overlay1': 'no label', 'Overlay2': 'no label', 'SPDist1': 'no label', 'SPDist2': 'no label', 'SPDist3': 'no label', 'LtdHeight': 'no label', 'SplitZone': 'no label', 'BldgClass': 'no label', 'LandUse': 'no label', 'Easements': 'no label', 'OwnerType': 'no label', 'OwnerName': 'no label', 'LotArea': 'no label', 'BldgArea': 'no label', 'ComArea': 'no label', 'ResArea': 'no label', 'OfficeArea': 'no label', 'RetailArea': 'no label', 'GarageArea': 'no label', 'StrgeArea': 'no label', 'FactryArea': 'no label', 'OtherArea': 'no label', 'AreaSource': 'no label', 'NumBldgs': 'no label', 'NumFloors': 'no label', 'UnitsRes': 'no label', 'UnitsTotal': 'no label', 'LotFront': 'no label', 'LotDepth': 'no label', 'BldgFront': 'no label', 'BldgDepth': 'no label', 'Ext': 'no label', 'ProxCode': 'no label', 'IrrLotCode': 'no label', 'LotType': 'no label', 'BsmtCode': 'no label', 'AssessLand': 'no label', 'AssessTot': 'no label', 'ExemptTot': 'no label', 'YearBuilt': 'no label', 'YearAlter1': 'no label', 'YearAlter2': 'no label', 'HistDist': 'no label', 'Landmark': 'no label', 'BuiltFAR': 'no label', 'ResidFAR': 'no label', 'CommFAR': 'no label', 'FacilFAR': 'no label', 'BoroCode': 'no label', 'BBL': 'no label', 'CondoNo': 'no label', 'Tract2010': 'no label', 'XCoord': 'no label', 'YCoord': 'no label', 'ZoneMap': 'no label', 'ZMCode': 'no label', 'Sanborn': 'no label', 'TaxMap': 'no label', 'EDesigNum': 'no label', 'APPBBL': 'no label', 'APPDate': 'no label', 'PLUTOMapID': 'no label', 'FIRM07_FLAG': 'no label', 'PFIRM15_FLAG': 'no label', 'Version': 'no label', 'DCPEdited': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'Notes': 'no label', 'MIHOption1': 'no label', 'MIHOption2': 'no label', 'MIHOption3': 'no label', 'MIHOption4': 'no label', 'TrnstZone': 'no label', 'AffResFAR': 'no label', 'ManuFAR': 'no label', 'Shape_Leng': 'no label', 'Shape_Length': 'no label', 'Shape_Area': 'no label', 'Res_Capacity': 'no label', });
+lyr_MTASubwayLines_7.set('fieldLabels', {':id': 'no label', ':version': 'no label', ':created_at': 'no label', ':updated_at': 'no label', 'objectid': 'no label', 'service_name': 'no label', 'service': 'no label', 'shape_stlength': 'no label', });
+lyr_MileFromRailTransit_8.set('fieldLabels', {'Complex ID': 'no label', 'Is Complex': 'no label', 'Number Of Stations In Complex': 'no label', 'Stop Name': 'no label', 'Display Name': 'no label', 'Constituent Station Names': 'no label', 'Station IDs': 'no label', 'GTFS Stop IDs': 'no label', 'Borough': 'no label', 'CBD': 'no label', 'Daytime Routes': 'no label', 'Structure Type': 'no label', 'Latitude': 'no label', 'Longitude': 'no label', 'ADA': 'no label', 'ADA Notes': 'no label', });
+lyr_MileFromRailTransit_8.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
